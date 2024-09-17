@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator & Download</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <h1>Resume Generator & Download</h1>
+        <h2><b>Milestone 5</bb></h2>
+        <form id="resumeForm">
+            <label for="username">Enter your username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required><br>
+            <button type="submit">Generate Resume URL</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Your Unique Resume URL:</h2>
+            <p id="resumeUrl"></p>
+            <button id="copyLink">Share Link</button>
+            <button id="downloadPdf">Download as PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+
+    <div class="container">
+        <h1>Editable Resume</h1>
+        <h2>Milestone 5</h2><br>
+        <form id="resumeForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="Contact No">Contact No:</label>
+                <input type="Contact No" id="Contact No" placeholder="Enter your Contact number">
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" placeholder="Enter your skills (comma separated)">
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <textarea id="experience" placeholder="Enter your experience"></textarea>
+            </div>
+
+            <button type="button" id="generateResume">Generate Resume</button>
+            <div class="Click">
+            <b>Click Here</b> <br>
+            <b>Create by:G.Rauf Khan</b>
+        </form>
+<!-- // ******************Dynamic & editable coding Area******************** -->
+
+        <div class="resume-output">
+            <h2>Your Resume:</h2>
+            <div id="resumeDisplay" contenteditable="true">
+                <!-- Resume will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script defer>
+        document.getElementById('generateResume').addEventListener('click', function() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let Contact  = document.getElementById('Contact No').value;
+            let skills = document.getElementById('skills').value;
+            let experience = document.getElementById('experience').value;
+
+            let resumeHtml = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Contact No :</strong> ${Contact }</p>
+                <p><strong>Skills:</strong> ${skills}</p>
+                <p><strong>Experience:</strong></p>
+                <p>${experience}</p>
+            `;
+
+            document.getElementById('resumeDisplay').innerHTML = resumeHtml;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+</body>
+</html>
